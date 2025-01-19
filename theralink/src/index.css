@@ -1,0 +1,22 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button-hover {
+    @apply bg-blue-600 text-white p-3 rounded-lg shadow-lg transition-all hover:bg-blue-800;
+  }
+  .text-primary {
+    @apply text-gray-800;
+  }
+  .text-secondary {
+    @apply text-gray-500;
+  }
+  .bg-medical-blue {
+    @apply bg-blue-600;
+  }
+  .bg-medical-light {
+    @apply bg-blue-50;
+  }
+}
