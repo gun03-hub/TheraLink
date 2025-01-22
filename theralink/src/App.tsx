@@ -8,19 +8,19 @@ const App = () => {
     <div className="bg-blue-50 h-screen flex flex-col items-center text-gray-800">
       
       {/* Logo and Navigation Bar */}
-      <header className="w-full bg-white shadow-md py-4 px-8 flex items-center fixed top-0 z-50">
+      <header className="w-full shadow-md py-4 px-8 flex items-center fixed top-0 z-50" style={{ backgroundColor: '#4CAF50' }}>
         <div className="flex items-center">
           <img src="/logo2.jpg" alt="TheraLink Logo" className="h-12 w-12 rounded-full object-cover" />
           <h1 className="text-3xl font-semibold ml-6">TheraLink</h1>
         </div>
-        <nav className="ml-96 mr-64">
-          <ul className="flex space-x-6">
+        <nav className="ml-auto mr-64">
+          <ul className="flex space-x-12 ml-auto">
           <li>
               <Link
                 to="home"
                 smooth={true}
-                className="text-lg cursor-pointer active:underline"
-                activeClass="active-link"
+                className="text-lg cursor-pointer active:underline hover:text-blue-500"
+                activeClass="text-blue-600 font-semibold"
               >
                 Home
               </Link>
