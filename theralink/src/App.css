@@ -36,22 +36,34 @@
   }
 }
 
-#how-it-works {
+#home {
   position: relative;
   z-index: 1;
   min-height: 80vh; /* This increases the height of the section */
-  padding-top: 5rem; /* Optional: Increase top padding */
   padding-bottom: 5rem; /* Optional: Increase bottom padding */
 }
 
 /* Apply animation to the Hero section background */
 .bg-animated-background {
   animation: background-transition 20s infinite ease-in-out;
-  background-size: cover; /* Make sure images cover the section */
-  background-position: center center; /* Center the images */
-  position: absolute;
-  inset: 0;
+  background-size: cover; /* Ensures the image covers the entire screen */
+  background-position: center center; /* Centers the image */
+  position: fixed; /* Keeps the background fixed while scrolling */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; /* Ensures the background spans the entire viewport */
+  z-index: -1; /* Ensures the background is behind the content */
+  filter: blur(5px); /* Optional: Adds a blur effect to the background */
 }
+
+/* Make sure content sits on top */
+section {
+  position: relative; /* Ensure the section is above the background */
+  z-index: 1; /* Set a higher z-index to bring content above the background */
+}
+
+
 
 h1,p {
   z-index: 10;
