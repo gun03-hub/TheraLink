@@ -13,8 +13,8 @@ const App = () => {
           <img src="/logo2.jpg" alt="TheraLink Logo" className="h-12 w-12 rounded-full object-cover" />
           <h1 className="text-3xl font-semibold ml-6">TheraLink</h1>
         </div>
-        <nav className="ml-auto mr-64">
-          <ul className="flex space-x-12 ml-auto">
+        <nav className="ml-auto mr-64 ">
+          <ul className="flex space-x-12 ml-auto font-bold">
           <li>
               <Link
                 to="home"
