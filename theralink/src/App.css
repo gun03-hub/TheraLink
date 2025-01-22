@@ -26,23 +26,40 @@
     background-image: url('/bg.jpg');
   }
   33% {
-    background-image: url('/logo.jpg');
+    background-image: url('/bg1.jpg');
   }
   66% {
-    background-image: url('/bg.jpg');
+    background-image: url('/bg11.jpg');
   }
   100% {
-    background-image: url('/path-to-your-image1.jpg');
+    background-image: url('/bg7.jpg');
   }
+}
+
+#how-it-works {
+  position: relative;
+  z-index: 1;
+  min-height: 80vh; /* This increases the height of the section */
+  padding-top: 5rem; /* Optional: Increase top padding */
+  padding-bottom: 5rem; /* Optional: Increase bottom padding */
 }
 
 /* Apply animation to the Hero section background */
 .bg-animated-background {
-  animation: background-transition 30s infinite ease-in-out;
+  animation: background-transition 20s infinite ease-in-out;
   background-size: cover; /* Make sure images cover the section */
   background-position: center center; /* Center the images */
   position: absolute;
   inset: 0;
+}
+
+h1,p {
+  z-index: 10;
+}
+
+button{
+  position: relative;
+  z-index: 10;
 }
 
 /* Reduce motion for accessibility */
@@ -87,5 +104,5 @@
 }
 
 .text-lg:visited {
-  color: #6a5acd; /* Color when the link has been visited (Choose your preferred color) */
+  color: #1f00e7; /* Color when the link has been visited (Choose your preferred color) */
 }

@@ -19,7 +19,7 @@ const App = () => {
               <Link
                 to="how-it-works"
                 smooth={true}
-                className="text-lg cursor-pointer"
+                className="text-lg cursor-pointer active:underline"
                 activeClass="active-link" // Active class
               >
                 How It Works
@@ -29,7 +29,7 @@ const App = () => {
               <Link
                 to="chatbot-section"
                 smooth={true}
-                className="text-lg cursor-pointer"
+                className="text-lg cursor-pointer active:underline"
                 activeClass="active-link" // Active class
               >
                 Chat with NeuroNex
@@ -39,7 +39,7 @@ const App = () => {
               <Link
                 to="footer"
                 smooth={true}
-                className="text-lg cursor-pointer"
+                className="text-lg cursor-pointer active:underline"
                 activeClass="active-link" // Active class
               >
                 Contact
@@ -51,7 +51,7 @@ const App = () => {
 
       {/* Hero Section with Animated Background */}
       <section
-        className="w-full h-screen flex flex-col justify-center items-center text-center text-white mt-16 relative"
+        className="w-full h-screen flex flex-col justify-center items-center text-center text-white mt-20 relative"
         id="how-it-works"
       >
         {/* Background Animation */}
