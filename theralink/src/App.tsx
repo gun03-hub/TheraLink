@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll'; // For smooth scrolling
-import './App.css';
+import './App.css';  // Custom CSS for animations
 import Chatbot from './components/Chatbot';
 
 const App = () => {
@@ -8,23 +8,61 @@ const App = () => {
     <div className="bg-blue-50 h-screen flex flex-col items-center text-gray-800">
       
       {/* Logo and Navigation Bar */}
-      <header className="w-full bg-white shadow-md py-4 px-8 flex justify-between items-center fixed top-0 z-50">
-        <img src="/logo.jpg" alt="TheraLink Logo" className="h-10" />
-        <nav>
+      <header className="w-full bg-white shadow-md py-4 px-8 flex items-center fixed top-0 z-50">
+        <div className="flex items-center">
+          <img src="/logo.jpg" alt="TheraLink Logo" className="h-10" />
+          <h1 className="text-2xl font-semibold ml-4">TheraLink</h1>
+        </div>
+        <nav className="ml-auto">
           <ul className="flex space-x-8">
-            <li><Link to="how-it-works" smooth={true} className="text-lg cursor-pointer">How It Works</Link></li>
-            <li><Link to="chatbot-section" smooth={true} className="text-lg cursor-pointer">Chat with NeuroNex</Link></li>
-            <li><Link to="footer" smooth={true} className="text-lg cursor-pointer">Contact</Link></li>
+            <li>
+              <Link
+                to="how-it-works"
+                smooth={true}
+                className="text-lg cursor-pointer"
+                activeClass="active-link" // Active class
+              >
+                How It Works
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="chatbot-section"
+                smooth={true}
+                className="text-lg cursor-pointer"
+                activeClass="active-link" // Active class
+              >
+                Chat with NeuroNex
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="footer"
+                smooth={true}
+                className="text-lg cursor-pointer"
+                activeClass="active-link" // Active class
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <section className="w-full h-screen bg-gradient-to-r from-blue-400 via-teal-500 to-green-500 flex flex-col justify-center items-center text-center text-white mt-16" id="how-it-works">
-        <h1 className="text-6xl font-bold">Welcome to TheraLink</h1>
-        <p className="text-xl mt-4">Your AI-powered mental health assistant</p>
+      {/* Hero Section with Animated Background */}
+      <section
+        className="w-full h-screen flex flex-col justify-center items-center text-center text-white mt-16 relative"
+        id="how-it-works"
+      >
+        {/* Background Animation */}
+        <div className="bg-animated-background"></div>
+
+        <h1 className="text-6xl font-bold z-10">Welcome to TheraLink</h1>
+        <p className="text-xl mt-4 z-10">Your AI-powered mental health assistant</p>
         <Link to="chatbot-section" smooth={true}>
-          <button className="mt-8 bg-green-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-green-800 transition-all">Start Chatting</button>
+          <button className="mt-8 bg-green-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-green-800 transition-all z-10">
+            Start Chatting
+          </button>
         </Link>
       </section>
 

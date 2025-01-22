@@ -11,22 +11,41 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Keyframes to animate background images */
+@keyframes background-transition {
+  0% {
+    background-image: url('/bg.jpg');
   }
-  to {
-    transform: rotate(360deg);
+  33% {
+    background-image: url('/logo.jpg');
+  }
+  66% {
+    background-image: url('/bg.jpg');
+  }
+  100% {
+    background-image: url('/path-to-your-image1.jpg');
   }
 }
 
+/* Apply animation to the Hero section background */
+.bg-animated-background {
+  animation: background-transition 30s infinite ease-in-out;
+  background-size: cover; /* Make sure images cover the section */
+  background-position: center center; /* Center the images */
+  position: absolute;
+  inset: 0;
+}
+
+/* Reduce motion for accessibility */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
@@ -38,5 +57,35 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: black;
+}
+
+/* Active Link Styles */
+.active-link {
+  color: #bb0019; /* Color when the link is active */
+  font-weight: bold; /* Optional: makes the active link bold */
+  text-decoration: underline; /* Optional: adds underline effect */
+}
+
+/* Hover Link Styles */
+.hover-link {
+  color: #008c76; /* Color when hovering over the link */
+  text-decoration: underline; /* Adds underline effect on hover */
+}
+
+.visited-link {
+  color: #6a5acd; /* Color when the link has been visited (Choose your preferred color) */
+}
+
+/* Default Link Styles */
+.text-lg {
+  transition: color 0.3s ease;
+}
+
+.text-lg:hover {
+  color: #008c76; /* Color on hover */
+}
+
+.text-lg:visited {
+  color: #6a5acd; /* Color when the link has been visited (Choose your preferred color) */
 }
