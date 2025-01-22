@@ -8,10 +8,10 @@ const App = () => {
     <div className="bg-blue-50 h-screen flex flex-col items-center text-gray-800">
       
       {/* Logo and Navigation Bar */}
-      <header className="w-full bg-white shadow-md py-4 px-8 flex items-center fixed top-0 z-50">
+      <header className="w-full shadow-md py-4 px-8 flex items-center fixed top-0 z-50" style={{ background: '#4CAF50' }}>
         <div className="flex items-center">
-          <img src="/logo.jpg" alt="TheraLink Logo" className="h-10" />
-          <h1 className="text-2xl font-semibold ml-4">TheraLink</h1>
+          <img src="/logo2.jpg" alt="TheraLink Logo" className="h-12 w-12 rounded-full object-cover" />
+          <h1 className="text-3xl font-semibold ml-6">TheraLink</h1>
         </div>
         <nav className="ml-auto">
           <ul className="flex space-x-8">

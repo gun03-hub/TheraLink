@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 
 const Chatbot = () => {
-  const [messages, setMessages] = useState([]);
+  interface Message {
+    text: string;
+    sender: string;
+  }
+  
+  const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
 
   const handleSendMessage = () => {

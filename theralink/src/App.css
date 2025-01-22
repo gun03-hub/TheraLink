@@ -39,7 +39,8 @@
 #how-it-works {
   position: relative;
   z-index: 1;
-  min-height: 80vh; /* This increases the height of the section */
+  min-height: 80vh;
+  min-width: 100vh; /* This increases the height of the section */
   padding-top: 5rem; /* Optional: Increase top padding */
   padding-bottom: 5rem; /* Optional: Increase bottom padding */
 }
