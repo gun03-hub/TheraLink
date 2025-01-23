@@ -30,54 +30,64 @@ const App = () => {
           <img src="/logo2.jpg" alt="TheraLink Logo" className="h-12 w-12 rounded-full object-cover" />
           <h1 className="text-3xl font-semibold ml-6">TheraLink</h1>
         </div>
-        <nav className="ml-auto mr-64 ">
-          <ul className="flex space-x-12 ml-auto text-white text-outline">
+        <nav className="ml-auto mr-50 ">
+          <ul className="flex space-x-8 ml-auto text-white text-outline">
             <li>
-              <Link to="home" smooth={true} className="text-lg cursor-pointer active:underline hover:text-blue-500" activeClass="text-blue-600 font-semibold">Home</Link>
+              <button>
+              <Link to="home" smooth={true} className="text-lg cursor-pointer active:underline text-outline" activeClass="text-blue-600 font-semibold">Home</Link>
+              </button>
             </li>
             <li>
-              <Link to="how-it-works" smooth={true} className="text-lg cursor-pointer active:underline" activeClass="active-link">How It Works</Link>
+              <button>
+              <Link to="how-it-works" smooth={true} className="text-lg cursor-pointer active:underline text-outline" activeClass="active-link">How It Works</Link>
+              </button>
             </li>
             <li>
-              <Link to="chatbot-section" smooth={true} className="text-lg cursor-pointer active:underline" activeClass="active-link">Chat with NeuroNex</Link>
+              <button>
+              <Link to="chatbot-section" smooth={true} className="text-lg cursor-pointer active:underline text-outline" activeClass="active-link">Chat with NeuroNex</Link>
+              </button>
             </li>
             <li>
-              <Link to="contact" smooth={true} className="text-lg cursor-pointer active:underline" activeClass="active-link">Contact</Link>
+              <button>
+              <Link to="contact" smooth={true} className="text-lg cursor-pointer text-outline" activeClass="active-link">Contact</Link>
+              </button>
             </li>
             <li>
-              <button onClick={handleSignUpOpen} className="text-lg cursor-pointer active:underline text-outline">Sign Up</button>
+              <button onClick={handleSignUpOpen} className="text-lg cursor-pointer active:underline text-outline px-6 py-2 rounded bg-blue-500 mr-2">Sign Up</button>
             </li>
             <li>
-              <button onClick={handleLoginOpen} className="text-lg cursor-pointer active:underline text-outline">Login</button>
+              <button onClick={handleLoginOpen} className="text-lg cursor-pointer active:underline text-outline px-6 py-2 rounded bg-blue-500 mr-2">Login</button>
             </li>
           </ul>
         </nav>
-      </header>
+      </header>   
 
       {/* Sign Up Popup */}
       <Popup open={isSignUpOpen} closeOnDocumentClick onClose={closeModal}>
         <div className="modal">
-          <h2>Sign Up</h2>
+          <h1 className='font items-center'>Sign Up</h1>
           <form>
             <input type="text" placeholder="Username" required />
             <input type="email" placeholder="Email" required />
             <input type="password" placeholder="Password" required />
-            <button type="submit">Sign Up</button>
+            <button style={{ marginRight: '10px', padding: '10px 20px' }} type="submit">Sign Up</button>
+            <button style={{ padding: '10px 20px' }}className="close" onClick={closeModal}>Close</button>
           </form>
-          <button className="close" onClick={closeModal}>Close</button>
+          
         </div>
       </Popup>
 
       {/* Login Popup */}
       <Popup open={isLoginOpen} closeOnDocumentClick onClose={closeModal}>
         <div className="modal">
-          <h2>Login</h2>
+          <h1 className='font items-center'>Login</h1>
           <form>
             <input type="email" placeholder="Email" required />
             <input type="password" placeholder="Password" required />
-            <button type="submit">Login</button>
+            <button style={{ marginRight: '10px', padding: '10px 20px' }} type="submit">Login</button>
+            <button style={{ padding: '10px 20px' }} className="close" onClick={closeModal}>Close</button>
           </form>
-          <button className="close" onClick={closeModal}>Close</button>
+          
         </div>
       </Popup>
 
