@@ -55,6 +55,16 @@ const App = () => {
                 Contact
               </Link>
             </li>
+            <li>
+              <Link
+                to="signUp"
+                smooth={true}
+                className="text-lg cursor-pointer active:underline"
+                activeClass="active-link"
+              >
+                Sign Up
+              </Link>
+            </li>
           </ul>
         </nav>
       </header>
