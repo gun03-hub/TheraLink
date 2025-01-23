@@ -14,7 +14,7 @@ const App = () => {
           <h1 className="text-3xl font-semibold ml-6">TheraLink</h1>
         </div>
         <nav className="ml-auto mr-64 ">
-          <ul className="flex space-x-12 ml-auto font-bold">
+          <ul className="flex space-x-12 ml-auto text-white text-outline">
           <li>
               <Link
                 to="home"
@@ -49,7 +49,7 @@ const App = () => {
               <Link
                 to="contact"
                 smooth={true}
-                className="text-lg cursor-pointer active:underline"
+                className="text-lg cursor-pointer active:underline text-outline"
                 activeClass="active-link"
               >
                 Contact
@@ -78,10 +78,10 @@ const App = () => {
 
         {/* Hero Content */}
         <div className="z-10 mt-16">
-          <h1 className="text-6xl font-bold">Welcome to TheraLink</h1>
-          <p className="text-xl mt-4">Your AI-powered mental health assistant</p>
+          <h1 className="text-6xl font-bold text-outline">Welcome to TheraLink</h1>
+          <p className="text-xl mt-4 text-outline">Your AI-powered mental health assistant</p>
           <Link to="chatbot-section" smooth={true}>
-            <button className="mt-8 bg-green-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-green-800 transition-all">
+            <button className="mt-8 bg-green-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-green-800 transition-all text-outline">
               Start Chatting
             </button>
           </Link>

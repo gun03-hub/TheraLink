@@ -119,3 +119,11 @@ button{
 .text-lg:visited {
   color: #1f00e7; /* Color when the link has been visited (Choose your preferred color) */
 }
+
+.text-outline {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Creates a soft outline */
+}
+
+.text-outline-bold {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* A stronger outline */
+}
