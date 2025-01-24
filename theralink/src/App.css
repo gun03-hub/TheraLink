@@ -70,10 +70,7 @@ h1,p {
   z-index: 10;
 }
 
-button{
-  position: relative;
-  z-index: 10;
-}
+
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: no-preference) {
@@ -98,7 +95,7 @@ button{
 }
 
 /* Hover Link Styles */
-.hover-link {
+.hover-Link {
   color: #008c76; /* Color when hovering over the link */
   text-decoration: underline; /* Adds underline effect on hover */
 }
@@ -119,3 +116,49 @@ button{
 .text-lg:visited {
   color: #1f00e7; /* Color when the link has been visited (Choose your preferred color) */
 }
+
+.text-outline {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Creates a soft outline */
+}
+
+.text-outline-bold {
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* A stronger outline */
+}
+
+.modal {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.font {
+  font-size: 25px;
+  font-weight: 400;
+}
+

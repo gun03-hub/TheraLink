@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 
 const Chatbot = () => {
   interface Message {
@@ -10,7 +10,7 @@ const Chatbot = () => {
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [conversationStage, setConversationStage] = useState('start');
-  const chatContainerRef = useRef(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const handleSendMessage = () => {
     if (input.trim()) {
@@ -52,7 +52,9 @@ const Chatbot = () => {
 
   // Scroll to bottom when a new message is added
   const scrollToBottom = () => {
-    chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
   };
 
   // Handle Enter key press to send message
