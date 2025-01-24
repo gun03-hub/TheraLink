@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Dashboard.css'; // Importing the CSS file for styling
+import './Dashboard.css'; // Importing CSS for dashboard styling
 
 const Dashboard = () => {
-  const navigate = useNavigate();
-
   // Sample user data (replace with dynamic data from API or state management)
   const [user] = useState({
     name: 'Gunjan Arora',
@@ -18,6 +15,7 @@ const Dashboard = () => {
     { date: '2025-01-22', mood: 'Calm' },
   ]);
 
+  // Handle logging mood and other features
   const handleEditProfile = () => {
     alert('Edit Profile feature coming soon!');
   };
@@ -27,12 +25,12 @@ const Dashboard = () => {
   };
 
   const handleStartChat = () => {
-    navigate('/chatbot'); // Ensure the chatbot route exists
+    alert('Redirecting to chatbot...');
   };
 
   return (
     <div className="dashboard-container">
-      <h1 className="dashboard-title">User Dashboard</h1>
+      <h1 className="dashboard-title">Welcome to Your Dashboard, {user.name}!</h1>
 
       {/* Profile Section */}
       <section className="dashboard-section">

@@ -40,7 +40,7 @@
   position: relative;
   z-index: 1;
   min-height: 100vh; /* This increases the height of the section */
-  padding-top: 5rem; /* Optional: Increase top padding */
+  padding-top: 120px; /* Optional: Increase top padding */
   padding-bottom: 5rem; /* Optional: Increase bottom padding */
   background: transparent;
 }

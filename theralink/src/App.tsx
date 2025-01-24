@@ -4,10 +4,12 @@ import Popup from 'reactjs-popup'; // Import the popup library
 import 'reactjs-popup/dist/index.css'; // Import the popup styles
 import './App.css'; // Custom CSS for animations
 import Chatbot from './components/Chatbot';
+import Dashboard from './components/Dashboard'; // Import the new Dashboard component
 
 const App = () => {
   const [isLoginOpen, setLoginOpen] = useState(false);
   const [isSignUpOpen, setSignUpOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Add state for tracking login status
 
   const handleLoginOpen = () => {
     setLoginOpen(true);
@@ -20,6 +22,13 @@ const App = () => {
   const closeModal = () => {
     setLoginOpen(false);
     setSignUpOpen(false);
+  };
+
+  const handleLogin = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    // Assuming successful login here; you can replace it with actual authentication logic
+    setIsLoggedIn(true);
+    setLoginOpen(false); // Close login popup after successful login
   };
 
   return (
@@ -80,7 +89,7 @@ const App = () => {
       <Popup open={isLoginOpen} closeOnDocumentClick onClose={closeModal}>
         <div className="modal">
           <h1 className="font items-center">Login</h1>
-          <form>
+          <form onSubmit={handleLogin}>
             <input type="email" placeholder="Email" required />
             <input type="password" placeholder="Password" required />
             <button style={{ marginRight: '10px', padding: '10px 20px' }} type="submit">Login</button>
@@ -89,7 +98,14 @@ const App = () => {
         </div>
       </Popup>
 
-      {/* Hero Section with Transparent Background */}
+
+      {/* Display Dashboard if User is Logged In */}
+      {isLoggedIn ? (
+        <Dashboard />
+      ) : (
+        <>
+
+        {/* Hero Section with Transparent Background */}
       <section className="w-full h-screen flex flex-col justify-center items-center text-center text-white relative" id="home">
         <div className="absolute inset-0 bg-animated-background"></div> {/* This div holds the animated background */}
         <div className="z-10 mt-16 bg-black bg-opacity-50 p-8 rounded-md"> {/* Background behind text */}
@@ -181,7 +197,11 @@ const App = () => {
           </button>
         </form>
       </section>
+        </>
+      )}
 
+      
+      
       {/* Footer Section */}
       <footer className="w-full py-12 bg-gray-200 text-center" id="footer">
         <p className="text-lg text-gray-600">© 2025 TheraLink - All rights reserved</p>
