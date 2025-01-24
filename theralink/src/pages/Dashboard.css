@@ -1,0 +1,118 @@
+/* General Container Styles */
+.dashboard-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .dashboard-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Section Styles */
+  .dashboard-section {
+    margin-bottom: 30px;
+  }
+  
+  .dashboard-section h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-section p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-card p {
+    font-size: 1rem;
+    color: #444;
+    margin: 5px 0;
+  }
+  
+  /* Mood History */
+  .mood-history {
+    margin-top: 20px;
+  }
+  
+  .mood-history h3 {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .mood-history ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .mood-history li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mood-history .mood {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-btn {
+    background-color: #007bff;
+  }
+  
+  .edit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .log-btn {
+    background-color: #28a745;
+  }
+  
+  .log-btn:hover {
+    background-color: #218838;
+  }
+  
+  .chat-btn {
+    background-color: #ffc107;
+  }
+  
+  .chat-btn:hover {
+    background-color: #e0a800;
+  }
+  
