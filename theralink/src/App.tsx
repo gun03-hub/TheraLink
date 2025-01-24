@@ -3,11 +3,7 @@ import { Link } from 'react-scroll'; // For smooth scrolling
 import Popup from 'reactjs-popup'; // Import the popup library
 import 'reactjs-popup/dist/index.css'; // Import the popup styles
 import './App.css'; // Custom CSS for animations
-import Chatbot from './components/Chatbot';
-import './App.css'; // Ensure this CSS file exists
-import Chatbot from './components/Chatbot'; // Correct path for Chatbot component
-import Dashboard from './pages/Dashboard'; // Correct path for Dashboard component
-
+import Chatbot from './components/Chatbot'; // Ensure this CSS file exists
 
 const App = () => {
   const [isLoginOpen, setLoginOpen] = useState(false);
@@ -30,76 +26,33 @@ const App = () => {
     <div className="bg-blue-50 h-screen flex flex-col items-center text-gray-800">
       {/* Logo and Navigation Bar */}
       <header className="w-full shadow-md py-4 px-8 flex items-center fixed top-0 z-50" style={{ backgroundColor: '#4CAF50' }}>
-
-    <div className="bg-blue-50 flex flex-col items-center text-gray-800">
-      {/* Navigation Bar */}
-      <header
-        className="w-full shadow-md py-4 px-8 flex items-center fixed top-0 z-50"
-        style={{ backgroundColor: '#4CAF50' }}
-      >
         <div className="flex items-center">
           <img src="/logo2.jpg" alt="TheraLink Logo" className="h-12 w-12 rounded-full object-cover" />
           <h1 className="text-3xl font-semibold ml-6">TheraLink</h1>
         </div>
-        <nav className="ml-auto mr-50 ">
+        <nav className="ml-auto">
           <ul className="flex space-x-8 ml-auto text-white text-outline">
             <li>
-              <button>
               <Link to="home" smooth={true} className="text-lg cursor-pointer active:underline text-outline" activeClass="text-blue-600 font-semibold">Home</Link>
-              </button>
             </li>
             <li>
-              <button>
               <Link to="how-it-works" smooth={true} className="text-lg cursor-pointer active:underline text-outline" activeClass="active-link">How It Works</Link>
-              </button>
             </li>
             <li>
-              <button>
               <Link to="chatbot-section" smooth={true} className="text-lg cursor-pointer active:underline text-outline" activeClass="active-link">Chat with NeuroNex</Link>
-              </button>
             </li>
             <li>
-              <button>
               <Link to="contact" smooth={true} className="text-lg cursor-pointer text-outline" activeClass="active-link">Contact</Link>
-              </button>
             </li>
             <li>
               <button onClick={handleSignUpOpen} className="text-lg cursor-pointer active:underline text-outline px-6 py-2 rounded bg-blue-500 mr-2">Sign Up</button>
             </li>
             <li>
               <button onClick={handleLoginOpen} className="text-lg cursor-pointer active:underline text-outline px-6 py-2 rounded bg-blue-500 mr-2">Login</button>
-
-        <nav className="ml-auto">
-          <ul className="flex space-x-12 font-bold">
-            <li>
-              <Link to="home" smooth className="text-lg cursor-pointer hover:text-blue-500">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link to="how-it-works" smooth className="text-lg cursor-pointer hover:text-blue-500">
-                How It Works
-              </Link>
-            </li>
-            <li>
-              <Link to="chatbot-section" smooth className="text-lg cursor-pointer hover:text-blue-500">
-                Chat with NeuroNex
-              </Link>
-            </li>
-            <li>
-              <Link to="dashboard" smooth className="text-lg cursor-pointer hover:text-blue-500">
-                Dashboard
-              </Link>
-            </li>
-            <li>
-              <Link to="contact" smooth className="text-lg cursor-pointer hover:text-blue-500">
-                Contact
-              </Link>
-
             </li>
           </ul>
         </nav>
-      </header>   
+      </header>
 
       {/* Sign Up Popup */}
       <Popup open={isSignUpOpen} closeOnDocumentClick onClose={closeModal}>
@@ -110,9 +63,8 @@ const App = () => {
             <input type="email" placeholder="Email" required />
             <input type="password" placeholder="Password" required />
             <button style={{ marginRight: '10px', padding: '10px 20px' }} type="submit">Sign Up</button>
-            <button style={{ padding: '10px 20px' }}className="close" onClick={closeModal}>Close</button>
+            <button style={{ padding: '10px 20px' }} className="close" onClick={closeModal}>Close</button>
           </form>
-          
         </div>
       </Popup>
 
@@ -126,18 +78,8 @@ const App = () => {
             <button style={{ marginRight: '10px', padding: '10px 20px' }} type="submit">Login</button>
             <button style={{ padding: '10px 20px' }} className="close" onClick={closeModal}>Close</button>
           </form>
-          
         </div>
       </Popup>
-
-      {/* Hero Section with Animated Background */}
-      <section className="w-full h-screen flex flex-col justify-center items-center text-center text-white relative" id="home">
-        <div className="absolute inset-0 bg-animated-background"></div>
-        <div className="z-10 mt-16">
-          <h1 className="text-6xl font-bold text-outline">Welcome to TheraLink</h1>
-          <p className="text-xl mt-4 text-outline">Your AI-powered mental health assistant</p>
-          <Link to="chatbot-section" smooth={true}>
-            <button className="mt-8 bg-green-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-green-800 transition-all text-outline">
 
       {/* Hero Section */}
       <section id="home" className="h-screen flex justify-center items-center text-center relative bg-gradient-to-r from-green-400 to-blue-500">
@@ -151,7 +93,6 @@ const App = () => {
           </Link>
         </div>
       </section>
-
 
       {/* How It Works Section */}
       <section className="w-full py-20 bg-white text-center" id="how-it-works">
@@ -173,12 +114,6 @@ const App = () => {
             As you continue using TheraLink, you'll get personalized suggestions, resources, and progress tracking to help you maintain your mental wellness. NeuroNex grows with you and adapts to your journey.
           </p>
         </div>
-      {/* How It Works */}
-      <section id="how-it-works" className="w-full py-20 bg-white text-center">
-        <h2 className="text-3xl font-semibold">How TheraLink Can Help</h2>
-        <p className="text-lg mt-4 text-gray-600 max-w-2xl mx-auto">
-          TheraLink connects you with NeuroNex, an AI assistant designed to guide you through mental wellness.
-        </p>
       </section>
 
       {/* Chatbot Section */}
@@ -236,18 +171,6 @@ const App = () => {
             Send Message
           </button>
         </form>
-      {/* Dashboard */}
-      <section id="dashboard" className="w-full py-20 bg-white text-center">
-        <h2 className="text-3xl font-semibold">Dashboard</h2>
-        <Dashboard />
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="w-full py-20 bg-gray-50 text-center">
-        <h2 className="text-3xl font-semibold">Contact Us</h2>
-        <p className="text-lg mt-4 max-w-2xl mx-auto">
-          Have questions? Get in touch with us.
-        </p>
       </section>
 
       {/* Footer */}
