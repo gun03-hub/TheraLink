@@ -3,9 +3,9 @@ import { Link } from 'react-scroll'; // For smooth scrolling
 import Popup from 'reactjs-popup'; // Import the popup library
 import 'reactjs-popup/dist/index.css'; // Import the popup styles
 import './App.css'; // Custom CSS for animations
-import Chatbot from './components/Chatbot'; // Ensure this component exists
+import Chatbot from './components/Chatbot';
 
-const App: React.FC = () => {
+const App = () => {
   const [isLoginOpen, setLoginOpen] = useState(false);
   const [isSignUpOpen, setSignUpOpen] = useState(false);
 
@@ -24,28 +24,33 @@ const App: React.FC = () => {
 
   return (
     <div className="bg-blue-50 h-screen flex flex-col items-center text-gray-800">
-      {/* Background Animation */}
-      <div className="bg-animated-background"></div>
-
       {/* Logo and Navigation Bar */}
       <header className="w-full shadow-md py-4 px-8 flex items-center fixed top-0 z-50" style={{ backgroundColor: '#4CAF50' }}>
         <div className="flex items-center">
           <img src="/logo2.jpg" alt="TheraLink Logo" className="h-12 w-12 rounded-full object-cover" />
           <h1 className="text-3xl font-semibold ml-6">TheraLink</h1>
         </div>
-        <nav className="ml-auto">
+        <nav className="ml-auto mr-50">
           <ul className="flex space-x-8 ml-auto text-white text-outline">
             <li>
-              <Link to="home" smooth={true} className="text-lg cursor-pointer active:underline text-outline" activeClass="text-blue-600 font-semibold">Home</Link>
+              <button>
+                <Link to="home" smooth={true} className="text-lg cursor-pointer active:underline text-outline" activeClass="text-blue-600 font-semibold">Home</Link>
+              </button>
             </li>
             <li>
-              <Link to="how-it-works" smooth={true} className="text-lg cursor-pointer active:underline text-outline" activeClass="active-link">How It Works</Link>
+              <button>
+                <Link to="how-it-works" smooth={true} className="text-lg cursor-pointer active:underline text-outline" activeClass="active-link">How It Works</Link>
+              </button>
             </li>
             <li>
-              <Link to="chatbot-section" smooth={true} className="text-lg cursor-pointer active:underline text-outline" activeClass="active-link">Chat with NeuroNex</Link>
+              <button>
+                <Link to="chatbot-section" smooth={true} className="text-lg cursor-pointer active:underline text-outline" activeClass="active-link">Chat with NeuroNex</Link>
+              </button>
             </li>
             <li>
-              <Link to="contact" smooth={true} className="text-lg cursor-pointer text-outline" activeClass="active-link">Contact</Link>
+              <button>
+                <Link to="contact" smooth={true} className="text-lg cursor-pointer text-outline" activeClass="active-link">Contact</Link>
+              </button>
             </li>
             <li>
               <button onClick={handleSignUpOpen} className="text-lg cursor-pointer active:underline text-outline px-6 py-2 rounded bg-blue-500 mr-2">Sign Up</button>
@@ -60,7 +65,7 @@ const App: React.FC = () => {
       {/* Sign Up Popup */}
       <Popup open={isSignUpOpen} closeOnDocumentClick onClose={closeModal}>
         <div className="modal">
-          <h1 className='font items-center'>Sign Up</h1>
+          <h1 className="font items-center">Sign Up</h1>
           <form>
             <input type="text" placeholder="Username" required />
             <input type="email" placeholder="Email" required />
@@ -74,7 +79,7 @@ const App: React.FC = () => {
       {/* Login Popup */}
       <Popup open={isLoginOpen} closeOnDocumentClick onClose={closeModal}>
         <div className="modal">
-          <h1 className='font items-center'>Login</h1>
+          <h1 className="font items-center">Login</h1>
           <form>
             <input type="email" placeholder="Email" required />
             <input type="password" placeholder="Password" required />
@@ -84,18 +89,19 @@ const App: React.FC = () => {
         </div>
       </Popup>
 
-      {/* Hero Section */}
-      <section id="home" className="h-screen flex justify-center items-center text-center relative">
-  <div>
-    <h1 className="text-6xl font-bold text-white">Welcome to TheraLink</h1>
-    <p className="text-xl text-white mt-4">Your AI-powered mental health assistant</p>
-    <Link to="chatbot-section" smooth>
-      <button className="mt-8 bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-800">
-        Start Chatting
-      </button>
-    </Link>
-  </div>
-</section>
+      {/* Hero Section with Transparent Background */}
+      <section className="w-full h-screen flex flex-col justify-center items-center text-center text-white relative" id="home">
+        <div className="absolute inset-0 bg-animated-background"></div> {/* This div holds the animated background */}
+        <div className="z-10 mt-16 bg-black bg-opacity-50 p-8 rounded-md"> {/* Background behind text */}
+          <h1 className="text-6xl font-bold text-outline">Welcome to TheraLink</h1>
+          <p className="text-xl mt-4 text-outline">Your AI-powered mental health assistant</p>
+          <Link to="chatbot-section" smooth={true}>
+            <button className="mt-8 bg-green-600 text-white px-8 py-3 rounded-full shadow-lg hover:bg-green-800 transition-all text-outline">
+              Start Chatting
+            </button>
+          </Link>
+        </div>
+      </section>
 
       {/* How It Works Section */}
       <section className="w-full py-20 bg-white text-center" id="how-it-works">
@@ -120,7 +126,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Chatbot Section */}
-      <section id="chatbot-section" className="w-full py-20 bg-blue-50 text-center">
+      <section className="w-full py-20 bg-blue-50 text-center mt-28" id="chatbot-section">
         <h2 className="text-3xl font-semibold text-gray-800">Chat with NeuroNex</h2>
         <Chatbot />
       </section>
@@ -176,9 +182,9 @@ const App: React.FC = () => {
         </form>
       </section>
 
-      {/* Footer */}
-      <footer className="w-full py-6 bg-gray-200 text-center">
-        <p>© 2025 TheraLink - All rights reserved</p>
+      {/* Footer Section */}
+      <footer className="w-full py-12 bg-gray-200 text-center" id="footer">
+        <p className="text-lg text-gray-600">© 2025 TheraLink - All rights reserved</p>
       </footer>
     </div>
   );
