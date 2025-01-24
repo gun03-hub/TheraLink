@@ -3,9 +3,9 @@ import { Link } from 'react-scroll'; // For smooth scrolling
 import Popup from 'reactjs-popup'; // Import the popup library
 import 'reactjs-popup/dist/index.css'; // Import the popup styles
 import './App.css'; // Custom CSS for animations
-import Chatbot from './components/Chatbot'; // Ensure this CSS file exists
+import Chatbot from './components/Chatbot'; // Ensure this component exists
 
-const App = () => {
+const App: React.FC = () => {
   const [isLoginOpen, setLoginOpen] = useState(false);
   const [isSignUpOpen, setSignUpOpen] = useState(false);
 
@@ -24,6 +24,9 @@ const App = () => {
 
   return (
     <div className="bg-blue-50 h-screen flex flex-col items-center text-gray-800">
+      {/* Background Animation */}
+      <div className="bg-animated-background"></div>
+
       {/* Logo and Navigation Bar */}
       <header className="w-full shadow-md py-4 px-8 flex items-center fixed top-0 z-50" style={{ backgroundColor: '#4CAF50' }}>
         <div className="flex items-center">
@@ -82,17 +85,17 @@ const App = () => {
       </Popup>
 
       {/* Hero Section */}
-      <section id="home" className="h-screen flex justify-center items-center text-center relative bg-gradient-to-r from-green-400 to-blue-500">
-        <div>
-          <h1 className="text-6xl font-bold text-white">Welcome to TheraLink</h1>
-          <p className="text-xl text-white mt-4">Your AI-powered mental health assistant</p>
-          <Link to="chatbot-section" smooth>
-            <button className="mt-8 bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-800">
-              Start Chatting
-            </button>
-          </Link>
-        </div>
-      </section>
+      <section id="home" className="h-screen flex justify-center items-center text-center relative">
+  <div>
+    <h1 className="text-6xl font-bold text-white">Welcome to TheraLink</h1>
+    <p className="text-xl text-white mt-4">Your AI-powered mental health assistant</p>
+    <Link to="chatbot-section" smooth>
+      <button className="mt-8 bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-800">
+        Start Chatting
+      </button>
+    </Link>
+  </div>
+</section>
 
       {/* How It Works Section */}
       <section className="w-full py-20 bg-white text-center" id="how-it-works">
