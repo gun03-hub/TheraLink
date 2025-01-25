@@ -31,6 +31,21 @@ const App = () => {
     setLoginOpen(false); // Close login popup after successful login
   };
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  
+
   return (
     <div className="bg-blue-50 h-screen flex flex-col items-center text-gray-800">
       {/* Logo and Navigation Bar */}
@@ -158,6 +173,11 @@ const App = () => {
           onSubmit={(e) => {
             e.preventDefault();
             alert('Form submitted');
+            setFormData({
+              name: '',
+              email: '',
+              message: '',
+            });
           }}
         >
           <div className="flex space-x-4">
@@ -165,6 +185,8 @@ const App = () => {
               <input
                 type="text"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your Name"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
                 required
@@ -174,6 +196,8 @@ const App = () => {
               <input
                 type="email"
                 name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Your Email"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
                 required
@@ -183,6 +207,8 @@ const App = () => {
           <div>
             <textarea
               name="message"
+              value={formData.message}
+              onChange={handleChange}
               placeholder="Your Message"
               rows={4}
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-600"
@@ -197,6 +223,7 @@ const App = () => {
           </button>
         </form>
       </section>
+
         </>
       )}
 
